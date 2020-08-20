@@ -14,6 +14,11 @@ static bool sortStr(char a, char b)
     return a < b;
 }
 
+static bool vecSort(vector<int>& a, vector<int>& b)
+{
+    return a[0] < b[0];
+}
+
 int main()
 {
     string str = "2134";

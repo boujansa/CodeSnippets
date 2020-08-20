@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void ap_util(unordered_map<int, vector<int>>& g, vector<bool>& visited, vector<int>& parent, vector<int>& disc, vector<int>& low, vector<bool>& ap, int u, int& time) {
+void ap_util(unordered_map<int, vector<int>>& g, vector<bool>& visited, vector<int>& parent, vector<int>& disc, vector<int>& low, vector<vector<int>>& ap, int u, int& time) {
     visited[u] = true;
 
     // new node, we set the discovery and low to time++
@@ -23,7 +23,7 @@ void ap_util(unordered_map<int, vector<int>>& g, vector<bool>& visited, vector<i
 
             // u is not a root, and its disc <= child's low time: meaning there is no back edge to one of u's ancestors
             else if (disc[u] < low[v])
-                ap[u] = true;
+                
         }
         // if this is not the parent of the current node, then we check if v has a discovery time smaller than u's low time. if we so, we use that
         // this means there is another wayt to reach u from v that is cheaper
